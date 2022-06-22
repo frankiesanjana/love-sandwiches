@@ -133,3 +133,13 @@ def main():
 
 print("Welcome to Love Sandwiches Data Automation")
 main()
+
+# Below code pasted from Stock Results Challenge
+
+def get_stock_values(data):
+    headings = SHEET.worksheet("stock").row_values(1)
+    mydict = {key: value for key, value in zip(headings, data)}
+    return mydict
+    
+stock_values = get_stock_values(stock_data)
+print(stock_values)
